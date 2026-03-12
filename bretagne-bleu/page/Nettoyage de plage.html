@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nettoyage de Plage</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #185886c2;">
+  <header>
+    <nav class="navbar">
+      <img id="Logo" src="../Img/Logo wbg.png" alt="Logo">
+      <div class="navbar-brand">Bretagne Blue</div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#register">Inscription</a></li>
+        <li><a href="index.html#Do" class="btn-act">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="home" class="parallax-section">
+    <video autoplay muted loop id="backgroundVideo">
+      <source src="../Img/videos/Ocean propre.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <h1 class="fadein-text2">Nettoyage de Plage</h1>
+      <a href="#register" class="btn" style="text-decoration: none;">S'inscrire</a>
+    </div>
+  </section>
+  <section id="about" style="background-color: #1e3a5fdc;">
+    <div class="Part-section">
+      <div class="text-wrapper2">
+        <h2 class="engagement-title">Pourquoi participer ?</h2>
+        <p id="tx">
+          Chaque année, <mark style="background-color: #ff9442; color: white;">des millions de tonnes</mark> de déchets plastiques, de produits chimiques 
+          et de métaux lourds sont déversés dans nos océans, transformant nos plages en décharges à ciel ouvert. 
+          Les conséquences sont <strong style="color: #ff6f00;">dévastatrices</strong> : des milliers d'espèces marines sont 
+          <strong style="color: #49ceff;">étouffées, piégées ou empoisonnées</strong>, perturbant des écosystèmes fragiles.
+        </p>
+        <p id="tx">
+          La pollution marine touche directement les <strong>communautés côtières</strong>. 
+          Pêcheurs, hôteliers, restaurateurs... Tous dépendent d'une mer propre. Autrefois paradisiaques,
+          nos plages sont maintenant envahies de déchets, menaçant l'économie locale et la santé humaine par les
+          <strong style="color: #1da0cf;">microplastiques</strong>.
+        </p>
+        <p id="tx">
+          <mark style="background-color: #49ceff; color: white;">Nous avons le pouvoir d'agir !</mark> 
+          En participant à notre nettoyage de plage, vous faites bien plus que ramasser des déchets. Vous inspirez,
+          vous contribuez à un mouvement global pour sauver nos océans et <strong>préserver un avenir sain</strong> pour tous.
+        </p>
+        <p id="tx">
+          <strong>Chaque geste compte.</strong> Ensemble, nous pouvons <mark style="background-color: #ff9442; color: white;">
+          inverser la tendance</mark>. Votre implication, même modeste, peut avoir un impact monumental. <strong style="color: #ff9442;">
+          Rejoignez-nous</strong> et aidez à redonner vie à nos plages.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="diaporama">
+    <h2 id="tt">Evenements passés !</h2>
+    <div class="slideshow-container carousel">
+      <div class="mySlides fade">
+        <img src="../Img/Net1.jpeg" alt="Image 1" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="../Img/Net2.jpeg" alt="Image 2" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="../Img/Net3.jpg" alt="Image 3" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <img src="../Img/Net4.jpeg" alt="Image 4" style="width:100%">
+      </div>
+    </div>
+    <div class="btnss">
+      <button id="prev">Précédent</button>
+      <button id="next">Suivant</button>
+    </div>
+  </section>
+  <section id="videos" class="videos-section">
+    <h2 class="section-title">
+      Gardons notre <span style="color: #6cdef7cb;">bretagne</span>,<br>
+      belle, propre, et <span style="color: #6cdef7cb;">Bleu</span>
+    </h2>
+    <div class="videos-flexbox">
+      <div class="video-item">
+        <video autoplay loop muted>
+          <source src="../Img/videos/NetVert1.mp4" type="video/mp4">
+          Video Bretagne propre et belle 1
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay loop muted>
+          <source src="../Img/videos/NetVert2.mp4" type="video/mp4">
+          Video Bretagne propre et belle 2
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay loop muted>
+          <source src="../Img/videos/NetVert3.mp4" type="video/mp4">
+          Video Bretagne propre et belle 3                
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay loop muted>
+          <source src="../Img/videos/NetVert4.mp4" type="video/mp4">
+          Video Bretagne propre et belle 4
+        </video>
+      </div>
+      <div class="video-item">
+        <video autoplay loop muted>
+          <source src="../Img/videos/NetVert5.mp4" type="video/mp4">
+          Video Bretagne propre et belle 5
+        </video>
+      </div>
+    </div>
+  </section>
+  <section id="register" style="background-color: #185886c2; padding: 50px 0;">
+    <div class="Part-section">
+      <div class="text-wrapper">
+        <h2 class="engagement-title">Inscrivez-vous</h2>
+        <p id="tx">
+          Rejoignez-nous le <strong style="color: #37c8fd;">15 octobre</strong> pour une journée de nettoyage.<br>
+          Remplissez le formulaire ci-dessous pour vous inscrire.
+        </p>
+        <form id="inscriptionForm">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required>
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" placeholder="Votre email" required>
+          <label for="phone">Téléphone :</label>
+          <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required>
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" placeholder="Votre message" rows="4"></textarea>
+          <button type="submit">S'inscrire</button>
+        </form>
+        <div id="confirmation" style="display: none;">
+          <h3>Vos informations :</h3>
+          <p><strong>Nom :</strong> <span id="confirm-name"></span></p>
+          <p><strong>Email :</strong> <span id="confirm-email"></span></p>
+          <p><strong>Téléphone :</strong> <span id="confirm-phone"></span></p>
+          <p><strong>Message :</strong> <span id="confirm-message"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="calcul">
+    <h2>Calcul des frais d'inscription</h2>
+    <label for="nombre">Nombre de participants :</label>
+    <input type="number" id="nombre" min="1" value="1">
+    <button id="calculer">Calculer</button>
+    <div id="resultat"></div>
+  </section>
+  <footer>
+    <p>&copy; 2024 Bretagne Blue. All rights reserved. MG</p>
+  </footer> 
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

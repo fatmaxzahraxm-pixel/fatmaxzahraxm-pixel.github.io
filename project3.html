@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet 3 - Portfolio 3D</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="i18n.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Canvas for WebGL / Three.js -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- HTML Overlay for text and sections -->
+    <div class="overlay">
+      <!-- Header / Navigation -->
+      <header>
+        <div class="logo">
+          <a href="index.html" style="text-decoration: none; color: #111"
+            >Portfolio</a
+          >
+        </div>
+        <nav>
+          <a href="index.html#about" data-i18n="nav.about">À propos</a>
+          <a href="index.html#projects" data-i18n="nav.projects">Parcours</a>
+          <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+
+          <select id="lang-select" class="lang-switcher">
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+            <option value="ar">العربية</option>
+          </select>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <section id="project-detail" class="section center">
+          <h1>Projet 3</h1>
+          <a href="index.html#projects" class="btn">Retour aux projets</a>
+        </section>
+      </main>
+    </div>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js module loading via CDN -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
