@@ -230,3 +230,73 @@ p {
     margin: 0;
     text-align: center;
 }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .projects-horizontal .project-card {
+        width: 350px;
+    }
+
+    .project-image {
+        height: 180px;
+    }
+
+    .projects-horizontal .project-card h3 {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid.projects-horizontal {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .projects-horizontal .project-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .section {
+        padding: 4rem 5%;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    .projects-horizontal .project-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid.projects-horizontal {
+        gap: 1rem;
+    }
+
+    .projects-horizontal .project-card {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .section {
+        padding: 3rem 5%;
+        min-height: auto;
+    }
+
+    .project-image {
+        height: 150px;
+    }
+
+    .projects-horizontal .project-card h3 {
+        font-size: 0.95rem;
+        padding: 1rem 0.75rem;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+}
