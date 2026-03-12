@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 3D</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Translation Engine -->
+    <script src="i18n.js" defer></script>
+</head>
+
+<body>
+    <!-- Canvas for WebGL / Three.js -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- HTML Overlay for text and sections -->
+    <div class="overlay">
+        <!-- Header / Navigation -->
+        <header>
+            <div class="logo">Portfolio</div>
+            <nav>
+                <a href="#about" data-i18n="nav.about">À propos</a>
+                <a href="#projects" data-i18n="nav.projects">Parcours</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+
+                <select id="lang-select" class="lang-switcher">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </nav>
+        </header>
+
+        <!-- Main Content Sections (Scrollable) -->
+        <main>
+            <section id="hero" class="section left">
+                <h1 data-i18n="hero.title">Fatma Marzouk</h1>
+                <p data-i18n="hero.subtitle">Étudiante en Informatique (21 ans)</p>
+            </section>
+
+            <section id="about" class="section right">
+                <h2 data-i18n="about.title">À Propos de Moi</h2>
+                <p data-i18n="about.text">Étudiante curieuse et motivée, avec de solides bases en programmation (Java,
+                    Python, HTML/JS) et Linux. Rigoureuse et organisée, je m'investis pleinement dans mes missions.</p>
+            </section>
+
+            <section id="education" class="section left">
+                <h2 data-i18n="education.title">Formations</h2>
+                <div class="projects-grid">
+                    <div class="project-card" data-i18n="education.1">Licence Sciences pour l'ingénieur (UBO) -
+                        2024-2026</div>
+                    <div class="project-card" data-i18n="education.2">Bachelor Data Science (ESLSCA Paris) - 2023-2024
+                    </div>
+                    <div class="project-card" data-i18n="education.3">Baccalauréat Sciences expérimentales - 2022-2023
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section right">
+                <h2 data-i18n="experience.title">Expérience Professionnelle</h2>
+                <div class="projects-grid">
+                    <div class="project-card" data-i18n="experience.1">Conseillère clientèle (Decathlon) - Sept 2025-Déc
+                        2025</div>
+                    <div class="project-card" data-i18n="experience.2">Vendeuse polyvalente (Le Fournil des Provinces)
+                    </div>
+                    <div class="project-card" data-i18n="experience.3">Factrice polyvalente (La Poste) - Déc 2023-Août
+                        2024</div>
+                </div>
+            </section>
+
+            <section id="volunteer" class="section left">
+                <h2 data-i18n="volunteer.title">Bénévolat</h2>
+                <div class="projects-grid">
+                    <div class="project-card" data-i18n="volunteer.1">Membre titulaire JCI (2020-2022)</div>
+                    <div class="project-card" data-i18n="volunteer.2">Directrice d'action (2020)</div>
+                    <div class="project-card" data-i18n="volunteer.3">Présidente JCI Zarzouna junior (2019)</div>
+                </div>
+            </section>
+
+            <section id="sport" class="section right">
+                <h2 data-i18n="sport.title">Sports</h2>
+                <div class="projects-grid">
+                    <div class="project-card" data-i18n="sport.1">Voile (ILCA 6)</div>
+                    <div class="project-card" data-i18n="sport.2">Escalade</div>
+                    <div class="project-card" data-i18n="sport.3">Musculation</div>
+                </div>
+            </section>
+
+            <section id="contact" class="section center">
+                <h2 data-i18n="contact.title">Travaillons ensemble !</h2>
+                <a href="mailto:fatmaxzahraxm@gmail.com" class="btn" data-i18n="contact.button">Me contacter</a>
+            </section>
+        </main>
+    </div>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js module loading via CDN -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
