@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #f1f7ed; 
+    font-family: 'Noto Serif', serif, 'Bebas Neue', sans-serif; 
+    color: #54494b; 
+}
+
+#navbar {
+    background-color: #54494b; 
+    color: #f1f7ed; 
+    padding: 20px; 
+    margin: 10px; 
+    border-radius: 15px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#entete {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+#entete img {
+    width: 200px; 
+    margin-bottom: 10px;
+    height:50px; 
+}
+
+#entete h1 {
+    font-size: 28px;
+    color: #e3d081;
+    margin: 10px 0; 
+}
+
+#entete p {
+    font-size: 14px; 
+    color: #91c7b1; 
+}
+
+#navigation {
+    margin-top: 15px;
+}
+
+#navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#navigation li {
+    display: flex;
+}
+
+#navigation a {
+    color: #f1f7ed;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #91c7b1;
+}
+
+#navigation a:hover {
+    background-color: #b33951;
+}
+
+#info1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+#info1 form {
+    background-color: #f1f7ed;
+    border: 2px solid #91c7b1;
+    border-radius: 25px;
+    padding: 10px;
+    width: 50%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#info1 label {
+    font-size: 16px;
+    color: #54494b;
+}
+
+#site-search {
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    flex: 1;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+#info1 button {
+    background-color: #91c7b1;
+    color: #f1f7ed;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+#info1 button:hover {
+    background-color: #b33951;
+}
+
+#images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    width: 50%;
+    max-width: 700px;
+}
+
+#image1, #image2, #image3 {
+    flex: 1;
+}
+
+#image1 img, #image2 img, #image3 img {
+    width: 100%;
+    max-width: 500px;
+    height: 90%;
+    border-radius: 15px;
+    border: 2px solid #91c7b1;
+}
+
+#pdf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#pdf h2 {
+    font-size: 24px;
+    color: #e3d081;
+    margin-bottom: 15px;
+}
+
+#pdf a {
+    width: 50%;
+    max-width: 600px;
+    background-color: #91c7b1;
+    color: #f1f7ed;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#pdf a:hover {
+    background-color: #b33951;
+}
+
+#tableau {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#tableau h2 {
+    font-size: 26px;
+    color: #e3d081;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 85%;
+    border-collapse: collapse;
+    background-color: #f1f7ed;
+    border: 2px solid #91c7b1;
+    border-radius: 12px;
+}
+
+th {
+    background-color: #54494b;
+    color: #f1f7ed;
+    font-size: 16px;
+    padding: 12px;
+    border-bottom: 2px solid #91c7b1;
+}
+
+td {
+    padding: 12px;
+    font-size: 14px;
+    color: #54494b;
+    border-bottom: 1px solid #e3d081;
+}
+
+td a {
+    text-decoration: none;
+    color: #f1f7ed;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background-color: #91c7b1;
+}
+
+td a:hover {
+    background-color: #b33951;
+}
+
+td:nth-child(4) {
+    color: #e3d081;
+    font-weight: bold;
+}
+
+#footer {
+    background-color: #54494b;
+    color: #f1f7ed;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#footerbox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+#certif, #agences, #partenaires {
+    background-color: #91c7b1;
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1;
+}
+
+#footer h3 {
+    font-size: 18px;
+    color: #e3d081;
+    margin-bottom: 10px;
+}
+
+#footer ul {
+    list-style: none;
+}
+
+#footer li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #f1f7ed;
+}
+
+#droit {
+    font-size: 12px;
+    color: #e3d081;
+    margin-top: 20px;
+}
+
+#info3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+    width: 80%;
+    background-color: #f1f7ed;
+    border: 2px solid #91c7b1;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#info3 h2 {
+    font-size: 24px;
+    color: #e3d081;
+    margin-bottom: 15px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+#info3 p {
+    font-size: 14px;
+    color: #54494b;
+    text-align:start;
+    line-height: 1.6;
+}
+
+#hab h2 {
+    font-size: 24px;
+    color: #e3d081;
+    margin-bottom: 15px;
+    font-family: 'Bebas Neue', sans-serif;
+    text-align: center;
+}

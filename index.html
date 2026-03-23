@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio 3D</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="i18n.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <canvas id="webgl-canvas"></canvas>
+    <div class="overlay">
+      <header>
+        <div class="logo">Portfolio</div>
+        <nav>
+          <a href="#about" data-i18n="nav.about">À propos</a>
+          <a href="#projects" data-i18n="nav.projects">Parcours</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+
+          <select id="lang-select" class="lang-switcher">
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+            <option value="ar">العربية</option>
+          </select>
+        </nav>
+      </header>
+
+      <!-- Main Content Sections (Scrollable) -->
+      <main>
+        <section id="hero" class="section left">
+          <h1 data-i18n="hero.title">Fatma Marzouk</h1>
+          <p data-i18n="hero.subtitle">Étudiante en Informatique (21 ans)</p>
+          <h2 data-i18n="about.title">À Propos de Moi</h2>
+          <p data-i18n="about.text">
+            Je suis plus à l'aise quand je fabrique quelque chose que quand je l'explique. Alors voilà ce que j'ai fait.
+          </p>
+          <img class="ordi" src="models/ecran-ordinateur-retro-dessin-anime-clavier-illustration-vectorielle-retro-kitsch-vintage_939711-2951-removebg-preview.png" alt="">
+        </section>
+
+        <section id="projects" class="section center">
+          <h2 data-i18n="projects.title">Mes Projets</h2>
+          <div class="projects-grid projects-horizontal">
+            <a href="BretagneBleu/index.html" class="project-card-link">
+              <div class="project-card">
+                <img
+                  src="./models/bretagne-bleu-icon.png"
+                  alt="Bretagne Bleu"
+                  class="project-image"
+                />
+                <h3>Bretagne Bleu</h3>
+              </div>
+            </a>
+            <a href="seine projet/index.html" class="project-card-link">
+              <div class="project-card">
+                <img
+                  src="./models/SeineC.png"
+                  alt="Projet 2"
+                  class="project-image"
+                />
+                <h3>Sombre Seine</h3>
+              </div>
+            </a>
+            <a href="ARKA_immo projet/index.html" class="project-card-link">
+              <div class="project-card">
+                <img
+                  src="./models/ArkaımmoC.png"
+                  alt="Projet 3"
+                  class="project-image"
+                />
+                <h3>Arka Immo</h3>
+              </div>
+            </a>
+            <a href="grain/index.html" class="project-card-link">
+              <div class="project-card">
+                <img
+                  src="./models/GRAİN.png"
+                  alt="Projet 4"
+                  class="project-image"
+                />
+                <h3>Grain</h3>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section id="education" class="section left">
+          <h2 data-i18n="education.title">Formations</h2>
+          <div class="projects-grid">
+            <a class="project-card" data-i18n="education.1" href="https://formations.univ-brest.fr/fr/index/sciences-technologies-sante-STS/licence-XA/portail-isi-informatique-et-sciences-pour-l-ingenieur-en-electronique-signal-telecommunications-reseaux-genie-mecanique-image-et-son-KYA6HEOY/l1-portail-isi-KYEEWVVJ.html"></a>
+            <a class="project-card" data-i18n="education.2" href="https://www.eslsca.fr/en/"></a>
+            <a class="project-card" data-i18n="education.3" href="models/baccalaureat_sciences_experimentales_tunisie_portfolio.pdf"></a>
+          </div>
+        </section>
+
+        <section id="experience" class="section right">
+          <h2 data-i18n="experience.title">Expérience Professionnelle</h2>
+          <div class="projects-grid">
+            <div class="project-card" data-i18n="experience.1">
+              Conseillère clientèle (Decathlon) - Sept 2025-Déc 2025
+            </div>
+            <div class="project-card" data-i18n="experience.2">
+              Vendeuse polyvalente (Le Fournil des Provinces)
+            </div>
+            <div class="project-card" data-i18n="experience.3">
+              Factrice polyvalente (La Poste) - Déc 2023-Août 2024
+            </div>
+          </div>
+          <img class="moi" src="models/moi.JPG" alt="photo">
+        </section>
+
+        <section class="side-by-side-sections">
+          <div class="section left" id="volunteer">
+            <h2 data-i18n="volunteer.title">Bénévolat</h2>
+            <div class="projects-grid">
+              <div class="project-card" data-i18n="volunteer.1">Membre titulaire JCI (2020-2022)</div>
+             <div class="project-card" data-i18n="volunteer.2">
+                Directrice d'action (2020)
+              </div>
+              <div class="project-card" data-i18n="volunteer.3">
+                Présidente JCI Zarzouna junior (2019)
+              </div>
+            </div>
+          </div>
+
+          <div class="section right" id="sport">
+            <h2 data-i18n="sport.title">Sports</h2>
+            <div class="projects-grid">
+              <div class="project-card" data-i18n="sport.1">Voile (ILCA 6)</div>
+              <div class="project-card" data-i18n="sport.2">Escalade</div>
+              <div class="project-card" data-i18n="sport.3">Musculation</div>
+              <img class='bateau' src="models/FFCE4FE9-B580-415D-9854-F791EDD739C5_1_201_a.jpeg" alt="">
+            </div>
+            </div>
+          </div>
+        </section>
+        <section id="contact" class="section center">
+          <h2 data-i18n="contact.title">Travaillons ensemble !</h2>
+          <a
+            href="mailto:fatmaxzahraxm@gmail.com"
+            class="btn"
+            data-i18n="contact.button"
+            >Me contacter</a
+          >
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

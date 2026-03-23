@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Seine — Écologie et Avenir</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script/22403914.js" defer></script>
+</head>
+<body onload="displaySlide()">
+
+  <header id="entete">
+    <div class="video1">
+      <video autoplay muted loop id="background-video" playsinline>
+        <source src="img/Video/Drone River Seine, Paris, France, 4k..mov" type="video/mp4">
+      </video>
+    </div>
+    <h1>Sombre <span>Seine</span></h1>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="page/rubrique1.html">Problématique</a></li>
+        <li><a href="page/rubrique2.html">La Seine & Culture</a></li>
+        <li><a href="page/rubrique3.html">Agissons</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="introduction">
+    <div class="section-inner">
+      <span class="section-label">À la découverte</span>
+      <h2>La Seine : le cœur de Paris</h2>
+      <div class="intro-highlight reveal">
+        <p class="para1">La Seine est un fleuve emblématique qui traverse Paris et relie la Bourgogne à la Manche. Ce fleuve majestueux est non seulement vital pour le transport et le commerce, mais il joue un rôle central dans la culture et l'histoire de la capitale française.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pollution">
+    <div class="section-inner">
+      <span class="section-label">Environnement</span>
+      <h2>Les Défis Environnementaux de la Seine</h2>
+      <p>Bien que la Seine soit essentielle à la vie parisienne, elle fait face à de nombreux problèmes de pollution :</p>
+
+      <div class="cards-grid reveal" style="margin-top:2rem;">
+        <div class="card">
+          <span class="card-icon">🚗</span>
+          <h3>Écoulements routiers</h3>
+          <p>Les eaux de ruissellement chargées d'hydrocarbures et de métaux lourds rejoignent directement le fleuve.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🌧️</span>
+          <h3>Surcharge des égouts</h3>
+          <p>Lors de fortes pluies, les systèmes d'égouts dépassent leur capacité et déversent des eaux usées non traitées.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏗️</span>
+          <h3>Infrastructures portuaires</h3>
+          <p>Les eaux usées des installations portuaires contribuent à la contamination chimique et bactériologique.</p>
+        </div>
+      </div>
+
+      <div id="pollution-details" style="margin-top:3rem;">
+        <h3 style="text-align:center; margin-bottom:1rem;">Impacts & Solutions</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Type de Pollution</th>
+              <th>Effets sur la Seine</th>
+              <th>Solutions proposées</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Écoulements routiers</td>
+              <td>Polluants dans les eaux de la Seine</td>
+              <td>Améliorer le drainage routier</td>
+            </tr>
+            <tr>
+              <td>Systèmes d'égouts</td>
+              <td>Débordements durant la pluie</td>
+              <td>Installer des bassins de rétention</td>
+            </tr>
+            <tr>
+              <td>Eaux usées des infrastructures</td>
+              <td>Pollution par des déchets industriels</td>
+              <td>Traitement des eaux usées avant rejet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact">
+    <div class="section-inner">
+      <span class="section-label">Écosystème</span>
+      <h2>Impact sur la Faune et la Flore</h2>
+      <p>La pollution de la Seine a un impact grave sur la faune et la flore aquatique. Les poissons, les oiseaux et les plantes qui dépendent du fleuve sont directement affectés par les contaminants chimiques et les déchets plastiques.</p>
+
+      <div id="photoanimee" class="reveal">
+        <div class="slides">
+          <img src="img/img1.jpeg" alt="Faune de la Seine" />
+        </div>
+        <div class="slides">
+          <img src="img/index_1.jpg" alt="Flore aquatique" />
+        </div>
+        <div class="slides">
+          <img src="img/inde_2.jpg" alt="Impact sur la nature" />
+        </div>
+        <div id="thumbnails" class="thumbnails">
+          <img src="img/previous.svg" alt="Précédent" onclick="rev()" style="width:44px;" />
+          <img src="img/img1.jpeg"    alt="Photo 1" onclick="showImageByIndex(0)" style="width:80px;" />
+          <img src="img/index_1.jpg"  alt="Photo 2" onclick="showImageByIndex(1)" style="width:80px;" />
+          <img src="img/inde_2.jpg"   alt="Photo 3" onclick="showImageByIndex(2)" style="width:80px;" />
+          <img src="img/next.svg"     alt="Suivant"  onclick="next()"  style="width:44px;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="effort">
+    <div class="section-inner">
+      <span class="section-label">Action</span>
+      <h2>Les Efforts de Dépollution</h2>
+      <p>La ville de Paris mène de nombreux efforts pour restaurer la Seine, notamment en réduisant les écoulements de pollution routière et en connectant les bateaux au réseau d'égouts.</p>
+      <div style="text-align:center; margin: 1.5rem 0;">
+        <a href="data/d'autre_source.pdf" class="bouton" style="display:inline-block; text-decoration:none;">📄 Grands projets pour une Seine propre</a>
+      </div>
+      <div class="photopollu reveal">
+        <img src="img/img2.jpeg" alt="Efforts de dépollution de la Seine" />
+      </div>
+    </div>
+  </section>
+
+  <section id="sources">
+    <div class="section-inner">
+      <span class="section-label">Références</span>
+      <h2>Sources & Références</h2>
+      <ul style="max-width:600px;">
+        <li><a href="https://www.linfodurable.fr/sante/jo-paris-2024-comment-la-seine-est-elle-depolluee-44246" target="_blank">La dépollution de la Seine — L'Info Durable</a></li>
+        <li><a href="https://www.surfrider.fr/nos-missions/qualite-eau-sante-usagers/qualite-eau-seine/" target="_blank">Qualité de l'eau de la Seine — Surfrider Foundation</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Contactez-nous</h2>
+    <ul>
+      <li>📞 0606060607</li>
+      <li>✉️ problemedelaseine@gmail.com</li>
+      <li>📍 144 boulevard Charles de Gaulle, Paris 75001</li>
+    </ul>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>

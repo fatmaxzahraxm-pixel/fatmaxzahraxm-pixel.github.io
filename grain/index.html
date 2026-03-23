@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grain — Film Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+</head>
+<body>
+
+  <div class="grain-overlay"></div>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <nav class="nav" id="nav">
+    <div class="logo" onclick="showPage('feed')">Grain</div>
+    <ul class="nav-links">
+      <li><button id="btn-feed"    class="nav-btn active" onclick="showPage('feed')">Work</button></li>
+      <li><button id="btn-contact" class="nav-btn"        onclick="showPage('contact')">Contact</button></li>
+    </ul>
+    <div class="nav-progress" id="nav-progress"></div>
+  </nav>
+
+  <div id="page-feed" class="page visible">
+    <div class="feed-header">
+      <p class="eyebrow reveal">Vol. 01 — The Feed</p>
+      <h1 class="feed-title reveal-delay-1">Recent Work</h1>
+      <div class="divider reveal-delay-2"></div>
+    </div>
+    <div class="masonry reveal-delay-2" id="masonry"></div>
+  </div>
+
+  <div id="page-detail" class="page">
+    <button class="detail-back" onclick="showPage('feed')">← Retour</button>
+    <div class="detail-layout">
+      <div class="detail-img-wrap">
+        <img id="detail-img" src="" alt=""/>
+        <div class="detail-img-overlay"></div>
+      </div>
+      <div class="detail-info">
+        <p class="detail-num"  id="detail-num"></p>
+        <h1 class="detail-title" id="detail-title"></h1>
+        <div class="detail-div"></div>
+        <p class="detail-desc" id="detail-desc"></p>
+        <div class="meta-grid">
+          <div class="meta-item"><label>Lieu</label><span id="d-loc"></span></div>
+          <div class="meta-item"><label>Année</label><span id="d-year"></span></div>
+          <div class="meta-item"><label>Appareil</label><span id="d-cam"></span></div>
+          <div class="meta-item"><label>Pellicule</label><span id="d-film"></span></div>
+        </div>
+        <div class="detail-nav">
+          <button id="btn-prev" class="nav-arrow" onclick="navigate(-1)"></button>
+          <button id="btn-next" class="nav-arrow" onclick="navigate(1)"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-contact" class="page">
+    <div class="contact-wrap">
+      <p class="eyebrow reveal">— Entrons en contact</p>
+      <h1 class="contact-title reveal-delay-1">Travaillons<br/>ensemble.</h1>
+      <p class="contact-intro reveal-delay-2">
+        Disponible pour des projets éditoriaux, portraiture, événements et collaborations créatives.
+        Décris ton projet, je réponds généralement sous 48h.
+      </p>
+      <div id="form-area" class="reveal-delay-3">
+        <form onsubmit="sendForm(event)">
+          <div class="fg">
+            <label for="f-name">Nom</label>
+            <input id="f-name" type="text" placeholder="Ton nom" required/>
+          </div>
+          <div class="fg">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" placeholder="ton@email.com" required/>
+          </div>
+          <div class="fg">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" rows="6" placeholder="Décris ton projet..." required></textarea>
+          </div>
+          <button type="submit" class="btn-send">
+            <span>Envoyer</span>
+            <span class="btn-arrow">→</span>
+          </button>
+        </form>
+      </div>
+      <div class="socials reveal-delay-3">
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">VSCO</a>
+        <a href="mailto:ton@email.com">Email direct</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>Grain — <span id="yr"></span></span>
+    <span>Film Photography</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img id="lightbox-img" src="" alt=""/>
+  </div>
+
+  <script src="js/photos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

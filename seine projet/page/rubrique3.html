@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agissons — Solutions pour la Seine</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script/22403914.js" defer></script>
+  <style>
+    #quiz-section {
+      background: linear-gradient(135deg, var(--sky-pale) 0%, var(--sky-soft) 100%);
+    }
+    #quiz-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .quiz-progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(63,65,107,0.12);
+      border-radius: 50px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--indigo-light), var(--coral));
+      border-radius: 50px;
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+    .quiz-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--indigo);
+      margin-bottom: 1.5rem;
+      padding: 0 0.25rem;
+    }
+    #quiz-timer {
+      background: var(--indigo);
+      color: white;
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      transition: background 0.3s;
+    }
+    #quiz-timer.urgent {
+      background: var(--coral);
+      animation: pulse 0.5s infinite alternate;
+    }
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to   { transform: scale(1.08); }
+    }
+    .quiz-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(180,210,231,0.4);
+      text-align: left;
+      animation: fadeUp 0.4s ease;
+    }
+    .quiz-question {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--indigo-deep);
+      text-align: left;
+      margin: 0 0 1.75rem;
+      line-height: 1.5;
+      max-width: none;
+    }
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+    .quiz-option {
+      background: var(--sky-pale);
+      border: 2px solid rgba(180,210,231,0.5);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1.25rem;
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text-dark);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+    .quiz-option:hover:not(:disabled) {
+      background: var(--sky-soft);
+      border-color: var(--indigo-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+    .quiz-option.correct {
+      background: #d4f0d4;
+      border-color: #4caf50;
+      color: #2e7d32;
+      font-weight: 600;
+    }
+    .quiz-option.wrong {
+      background: #fde8e8;
+      border-color: #e57373;
+      color: #c62828;
+    }
+    .quiz-option:disabled { cursor: not-allowed; transform: none; }
+    .quiz-explanation {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: rgba(83,89,154,0.08);
+      border-left: 4px solid var(--indigo-light);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      text-align: left;
+      max-width: none;
+      line-height: 1.6;
+    }
+    .quiz-result {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      animation: fadeUp 0.5s ease;
+    }
+    .quiz-result-emoji {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .quiz-result h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--indigo-deep);
+      text-transform: none;
+      letter-spacing: 0;
+      margin-bottom: 0.75rem;
+    }
+    .quiz-stars {
+      font-size: 2rem;
+      letter-spacing: 0.2rem;
+      margin: 0.5rem 0 1rem;
+      display: block;
+    }
+    .hidden { display: none !important; }
+    @media (max-width: 560px) {
+      .quiz-options { grid-template-columns: 1fr; }
+      .quiz-card { padding: 1.75rem 1.25rem; }
+      .quiz-meta { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="entete">
+    <div class="video1">
+      <video autoplay muted loop id="background-video" playsinline>
+        <source src="../img/Video/Drone River Seine, Paris, France, 4k..mov" type="video/mp4">
+      </video>
+    </div>
+    <h1>Sombre <span>Seine</span></h1>
+    <nav>
+      <ul class="nav">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="rubrique1.html">Problematique</a></li>
+        <li><a href="rubrique2.html">La Seine &amp; Culture</a></li>
+        <li><a href="rubrique3.html" class="active">Agissons</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="solutions">
+    <div class="section-inner">
+      <span class="section-label">Plan d'action</span>
+      <h2>Agissons — Solutions pour la Seine</h2>
+      <p>La pollution de la Seine peut être résolue, mais cela nécessite des efforts communs et des actions concrètes. Voici les solutions à mettre en place :</p>
+
+      <div class="cards-grid reveal" style="margin-top:2.5rem;">
+        <div class="card">
+          <span class="card-icon">🔧</span>
+          <h3>Réduire les écoulements polluants</h3>
+          <p>Installer des systèmes de filtration et de captage des eaux de pluie pour limiter les écoulements routiers et industriels.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏗️</span>
+          <h3>Moderniser les infrastructures</h3>
+          <p>Rénover les systèmes d'égouts pour éviter les débordements d'eaux usées, surtout lors de fortes pluies.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">⚡</span>
+          <h3>Énergies propres</h3>
+          <p>Encourager les énergies renouvelables pour les bateaux afin de réduire les émissions de CO₂ et autres polluants.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">📢</span>
+          <h3>Sensibilisation du public</h3>
+          <p>Organiser des campagnes pour encourager les Parisiens à ne pas jeter de déchets dans le fleuve.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🧹</span>
+          <h3>Nettoyage collectif</h3>
+          <p>Organiser des journées de nettoyage avec citoyens, écoles et associations environnementales.</p>
+        </div>
+      </div>
+
+      <div class="photo1 reveal">
+        <img src="../img/net.jpg" alt="Efforts de nettoyage de la Seine" />
+      </div>
+    </div>
+  </section>
+
+
+  <section id="call-to-action">
+    <div class="section-inner">
+      <span class="section-label">Participez</span>
+      <h2>Il est Temps d'Agir !</h2>
+      <p>Chacun de nous peut jouer un rôle dans la préservation de la Seine. Agissons ensemble pour un avenir plus propre et durable.</p>
+
+      <div style="background:var(--white); border-radius:var(--radius-lg); padding:2.5rem; max-width:600px; margin:2rem auto 0; box-shadow:var(--shadow-md);" class="reveal">
+        <h3 style="text-align:center; color:var(--indigo); font-size:1.1rem; text-transform:none; letter-spacing:0; margin-bottom:1.5rem;">
+          📋 Inscrivez-vous à la prochaine journée de nettoyage
+        </h3>
+        <form id="formulaire_inscription" onsubmit="return valformulaire()">
+          <div class="form-row">
+            <div>
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" placeholder="Votre nom">
+            </div>
+            <div>
+              <label for="prenom">Prénom</label>
+              <input type="text" id="prenom" placeholder="Votre prénom">
+            </div>
+          </div>
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="votre@email.com">
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" placeholder="06 00 00 00 00">
+          <div class="form-actions">
+            <input class="bouton" type="button" value="✓ S'inscrire" onclick="alerte()" id="boutonsub" />
+            <input class="bouton" type="button" onclick="calculerprix()" value="💛 Aider financièrement" style="background:var(--indigo-light);" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz-section">
+    <div class="section-inner">
+      <span class="section-label">Mini-jeu</span>
+      <h2>🎯 Quiz — Connais-tu la Seine ?</h2>
+      <p style="margin-bottom:2rem;">10 questions sur la Seine, la pollution et l'écologie. Tu as <strong>15 secondes</strong> par question. Bonne chance !</p>
+
+      <div id="quiz-container" class="reveal">
+
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+        </div>
+
+        <div class="quiz-meta">
+          <span id="quiz-counter">Question 1 / 10</span>
+          <span id="quiz-score-live">⭐ Score : 0</span>
+          <span id="quiz-timer">⏱ 15s</span>
+        </div>
+
+        <div class="quiz-card" id="quiz-card">
+          <p class="quiz-question" id="quiz-question">Chargement...</p>
+          <div class="quiz-options" id="quiz-options"></div>
+          <p class="quiz-explanation hidden" id="quiz-explanation"></p>
+        </div>
+
+        <div style="text-align:center; margin-top:1.5rem;">
+          <button class="bouton hidden" id="btn-next" onclick="quizNext()">Question suivante →</button>
+        </div>
+
+        <div class="quiz-result hidden" id="quiz-result">
+          <span class="quiz-result-emoji" id="result-emoji">🎉</span>
+          <h3 id="result-title">Résultat</h3>
+          <span class="quiz-stars" id="result-stars"></span>
+          <p id="result-score" style="text-align:center; font-size:1.4rem; font-weight:700; color:var(--indigo);"></p>
+          <p id="result-message" style="text-align:center; margin-top:0.5rem;"></p>
+          <button class="bouton" onclick="quizRestart()" style="display:block; margin:1.5rem auto 0;">🔄 Rejouer</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Contactez-nous</h2>
+    <ul>
+      <li>📞 0606060607</li>
+      <li>✉️ problemedelaseine@gmail.com</li>
+      <li>📍 144 boulevard Charles de Gaulle, Paris 75001</li>
+    </ul>
+  </footer>
+
+  <script>
+
+    const QUESTIONS = [
+      {
+        q: "Quelle est la longueur totale de la Seine ?",
+        options: ["275 km", "485 km", "775 km", "1 020 km"],
+        answer: 2,
+        explication: "La Seine mesure 775 km, de sa source en Côte-d'Or jusqu'à son embouchure en Normandie."
+      },
+      {
+        q: "Quelle bactérie dangereuse est souvent détectée dans la Seine après de fortes pluies ?",
+        options: ["Salmonella", "E. coli", "Streptococcus", "Listeria"],
+        answer: 1,
+        explication: "E. coli (Escherichia coli) provient des eaux usées et indique une contamination fécale. Elle rend la baignade très risquée."
+      },
+      {
+        q: "Quel événement de 2024 a mis la dépollution de la Seine sous les projecteurs ?",
+        options: ["Coupe du Monde", "Tour de France", "Jeux Olympiques de Paris", "Roland-Garros"],
+        answer: 2,
+        explication: "Les JO de Paris 2024 ont prévu des épreuves de triathlon dans la Seine, forçant d'importants travaux de dépollution."
+      },
+      {
+        q: "Quelle est la principale source de pollution de la Seine en milieu urbain ?",
+        options: ["Les déchets plastiques jetés à la main", "Les débordements d'égouts lors de pluies", "Les bateaux de tourisme", "Les centrales nucléaires"],
+        answer: 1,
+        explication: "Lors de fortes pluies, les réseaux d'assainissement saturés déversent des eaux usées non traitées directement dans le fleuve."
+      },
+      {
+        q: "Quel peintre impressionniste est célèbre pour ses tableaux de la Seine ?",
+        options: ["Pablo Picasso", "Claude Monet", "Paul Cézanne", "Henri Matisse"],
+        answer: 1,
+        explication: "Claude Monet a peint la Seine à de nombreuses reprises, notamment à Argenteuil, capturant ses reflets à toutes les heures du jour."
+      },
+      {
+        q: "Combien d'espèces de poissons vivent dans la Seine à Paris aujourd'hui ?",
+        options: ["3 espèces", "12 espèces", "32 espèces", "67 espèces"],
+        answer: 2,
+        explication: "On recense environ 32 espèces de poissons contre seulement 3 dans les années 1970 — signe d'une amélioration réelle de la qualité de l'eau."
+      },
+      {
+        q: "Qu'est-ce qu'un bassin de rétention dans le contexte de la dépollution de la Seine ?",
+        options: [
+          "Un parc aquatique écologique",
+          "Un réservoir stockant les eaux usées avant traitement",
+          "Un filet pour capturer les plastiques",
+          "Une station de mesure de la qualité de l'eau"
+        ],
+        answer: 1,
+        explication: "Les bassins de rétention sont de grands réservoirs souterrains qui retiennent les eaux lors des pluies, évitant leur rejet direct dans la Seine."
+      },
+      {
+        q: "En quelle année la baignade dans la Seine à Paris a-t-elle été interdite ?",
+        options: ["1923", "1953", "1971", "1990"],
+        answer: 0,
+        explication: "La baignade dans la Seine a été officiellement interdite à Paris en 1923 pour des raisons sanitaires, une interdiction partiellement levée pour les JO 2024."
+      },
+      {
+        q: "Lequel de ces polluants est un perturbateur endocrinien retrouvé dans la Seine ?",
+        options: ["Le sel de déneigement", "Le sable de construction", "Les résidus de médicaments", "La vapeur d'eau"],
+        answer: 2,
+        explication: "Les résidus de médicaments (hormones, antidépresseurs…) ne sont pas filtrés par les stations d'épuration et perturbent le système hormonal des poissons."
+      },
+      {
+        q: "Quel pourcentage des Français vivent dans le bassin versant de la Seine ?",
+        options: ["10 %", "19 %", "30 %", "45 %"],
+        answer: 2,
+        explication: "Environ 30 % de la population française vit dans le bassin versant de la Seine, ce qui en fait un enjeu environnemental majeur."
+      }
+    ];
+
+    let quizIndex = 0;
+    let quizScore = 0;
+    let timerID   = null;
+    let timeLeft  = 15;
+    let answered  = false;
+
+    function quizInit() {
+      quizIndex = 0;
+      quizScore = 0;
+      answered  = false;
+      document.getElementById("quiz-result").classList.add("hidden");
+      document.getElementById("quiz-card").classList.remove("hidden");
+      document.getElementById("quiz-meta") && document.getElementById("quiz-meta").classList.remove("hidden");
+      document.getElementById("quiz-progress-fill").style.width = "0%";
+      quizRender();
+    }
+
+    function quizRender() {
+      const q = QUESTIONS[quizIndex];
+      answered = false;
+
+      document.getElementById("quiz-progress-fill").style.width = ((quizIndex / QUESTIONS.length) * 100) + "%";
+      document.getElementById("quiz-counter").textContent    = "Question " + (quizIndex + 1) + " / " + QUESTIONS.length;
+      document.getElementById("quiz-score-live").textContent = "⭐ Score : " + quizScore;
+      document.getElementById("quiz-question").textContent = q.q;
+      const container = document.getElementById("quiz-options");
+      container.innerHTML = "";
+      q.options.forEach(function(opt, i) {
+        const btn = document.createElement("button");
+        btn.className = "quiz-option";
+        btn.textContent = opt;
+        btn.onclick = function() { quizAnswer(i); };
+        container.appendChild(btn);
+      });
+      const expl = document.getElementById("quiz-explanation");
+      expl.textContent = "";
+      expl.classList.add("hidden");
+      document.getElementById("btn-next").classList.add("hidden");
+      document.getElementById("quiz-timer").classList.remove("urgent");
+      startTimer();
+    }
+
+    function startTimer() {
+      clearInterval(timerID);
+      timeLeft = 15;
+      updateTimerDisplay();
+      timerID = setInterval(function() {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 5) {
+          document.getElementById("quiz-timer").classList.add("urgent");
+        }
+        if (timeLeft <= 0) {
+          clearInterval(timerID);
+          if (!answered) timeOut();
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      document.getElementById("quiz-timer").textContent = "⏱ " + timeLeft + "s";
+    }
+
+    function timeOut() {
+      answered = true;
+      const btns = document.querySelectorAll(".quiz-option");
+      btns.forEach(function(b) { b.disabled = true; });
+      btns[QUESTIONS[quizIndex].answer].classList.add("correct");
+      showExplication("⏰ Temps écoulé ! " + QUESTIONS[quizIndex].explication);
+      document.getElementById("btn-next").classList.remove("hidden");
+    }
+
+    function quizAnswer(chosen) {
+      if (answered) return;
+      answered = true;
+      clearInterval(timerID);
+      document.getElementById("quiz-timer").classList.remove("urgent");
+
+      const correct = QUESTIONS[quizIndex].answer;
+      const btns    = document.querySelectorAll(".quiz-option");
+      btns.forEach(function(b) { b.disabled = true; });
+
+      if (chosen === correct) {
+        btns[chosen].classList.add("correct");
+        quizScore++;
+        if (timeLeft >= 10) quizScore++; // bonus rapidité
+        document.getElementById("quiz-score-live").textContent = "⭐ Score : " + quizScore;
+        showExplication("✅ Bonne réponse ! " + QUESTIONS[quizIndex].explication);
+      } else {
+        btns[chosen].classList.add("wrong");
+        btns[correct].classList.add("correct");
+        showExplication("❌ Mauvaise réponse. " + QUESTIONS[quizIndex].explication);
+      }
+
+      document.getElementById("btn-next").classList.remove("hidden");
+    }
+
+    function showExplication(text) {
+      const expl = document.getElementById("quiz-explanation");
+      expl.textContent = text;
+      expl.classList.remove("hidden");
+    }
+
+    function quizNext() {
+      quizIndex++;
+      if (quizIndex >= QUESTIONS.length) {
+        quizFinish();
+      } else {
+        quizRender();
+      }
+    }
+
+    function quizFinish() {
+      clearInterval(timerID);
+      document.getElementById("quiz-progress-fill").style.width = "100%";
+      document.getElementById("quiz-card").classList.add("hidden");
+      document.getElementById("btn-next").classList.add("hidden");
+
+      const pct = quizScore / QUESTIONS.length;
+      let emoji, title, message, stars;
+
+      if (pct >= 0.9)      { emoji = "🏆"; title = "Expert de la Seine !";       stars = "⭐⭐⭐⭐⭐"; message = "Impressionnant ! Tu maîtrises parfaitement les enjeux écologiques du fleuve."; }
+      else if (pct >= 0.7) { emoji = "🌊"; title = "Défenseur de la Seine !";    stars = "⭐⭐⭐⭐";   message = "Très bien ! Tu es sensibilisé aux problèmes environnementaux. Encore un effort !"; }
+      else if (pct >= 0.5) { emoji = "🐟"; title = "En bonne voie !";            stars = "⭐⭐⭐";     message = "Pas mal ! Explore les autres pages du site pour en apprendre davantage."; }
+      else if (pct >= 0.3) { emoji = "💧"; title = "À améliorer…";               stars = "⭐⭐";       message = "La Seine a besoin de toi ! Lis les sections Problématique et Solutions."; }
+      else                 { emoji = "🌧️"; title = "Il faut apprendre !";        stars = "⭐";         message = "Ne te décourage pas ! Parcours le site et reviens tenter le quiz."; }
+
+      document.getElementById("result-emoji").textContent   = emoji;
+      document.getElementById("result-title").textContent   = title;
+      document.getElementById("result-stars").textContent   = stars;
+      document.getElementById("result-score").textContent   = quizScore + " points sur " + QUESTIONS.length + " questions";
+      document.getElementById("result-message").textContent = message;
+      document.getElementById("quiz-result").classList.remove("hidden");
+    }
+
+    function quizRestart() { quizInit(); }
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(r) { observer.observe(r); });
+
+    window.addEventListener("load", quizInit);
+  </script>
+</body>
+</html>

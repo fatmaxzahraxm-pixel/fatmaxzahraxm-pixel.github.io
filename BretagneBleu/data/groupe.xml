@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<group>
+  <student gender="male">
+    <name>Rémi</name>
+    <address>7, Rue du Léon</address>
+    <email>e2410@univ-brest.fr</email>
+  </student>
+  <student gender="male">
+    <name>Léo</name>
+    <address>15, Rue de Kermenguy</address>
+    <email>e2451@univ-brest.fr</email>
+  </student>
+  <student gender="male">
+    <name>Clément</name>
+    <address>19, Avenue Victor le Gorgeu</address>
+    <email>e2341@univ-brest.fr</email>
+  </student>
+  <student gender="Female">
+      <name>Fabrice</name>
+    <address>22, rue Malakoff</address>
+    <email>e22541@univ-brest.fr</email>
+  </student>
+  <student gender="Female">
+      <name>Lea</name>
+    <address>2bis Rue amiral vallon</address>
+    <email>e567373@univ-brest.fr</email>
+  </student>
+  <student gender="Female">
+      <name>Aude</name>
+    <address>29 rue saint berbe</address>
+    <email>e12214@univ-brest.fr</email>
+  </student>
+</group>

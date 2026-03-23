@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Seine et la Culture — Sombre Seine</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script/22403914.js" defer></script>
+</head>
+<body>
+
+  <header id="entete">
+    <div class="video1">
+      <video autoplay muted loop id="background-video" playsinline>
+        <source src="../img/Video/Drone River Seine, Paris, France, 4k..mov" type="video/mp4">
+      </video>
+    </div>
+    <h1>Sombre <span>Seine</span></h1>
+    <nav>
+      <ul class="nav">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="rubrique1.html">Problématique</a></li>
+        <li><a href="rubrique2.html" class="active">La Seine & Culture</a></li>
+        <li><a href="rubrique3.html">Agissons</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CULTURE -->
+  <section id="culture">
+    <div class="section-inner">
+      <span class="section-label">Patrimoine</span>
+      <h2>La Seine : Un Fleuve Culturel</h2>
+      <p>La Seine a joué un rôle crucial dans la culture française. Elle a inspiré d'innombrables artistes, écrivains et musiciens, devenant une muse vivante au fil des siècles.</p>
+
+      <div class="cards-grid reveal" style="margin-top:2.5rem;">
+        <div class="card">
+          <span class="card-icon">🎨</span>
+          <h3>Peinture</h3>
+          <p>Les impressionnistes comme Monet ont capturé la beauté de la Seine dans des toiles mondialement connues, immortalisant ses reflets et ses brumes.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">📖</span>
+          <h3>Littérature</h3>
+          <p>De nombreux romans et poèmes font référence à la Seine, notamment dans les œuvres de Victor Hugo et de Balzac qui en ont fait le décor de leurs intrigues.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎵</span>
+          <h3>Musique</h3>
+          <p>Des chansons populaires ont évoqué la romance et la tranquillité de la Seine à travers les générations, de la chanson française au jazz parisien.</p>
+        </div>
+      </div>
+
+      <!-- Slideshow -->
+      <div id="photoanimee" class="reveal" style="margin-top:3rem;">
+        <div class="slidee">
+          <img src="../img/river-seine.jpg" alt="La Seine" style="width:100%" />
+        </div>
+        <div class="slidee">
+          <img src="../img/quai de seine.jpg" alt="Quai de Seine" style="width:100%" />
+        </div>
+        <div class="slidee">
+          <img src="../img/seine2.jpg" alt="La Seine vue de haut" style="width:100%" />
+        </div>
+        <div id="thumbnails" class="thumbnails">
+          <img src="../img/previous.svg"       alt="Précédent" onclick="prev()"          style="width:44px;" />
+          <img src="../img/river-seine.jpg"    alt="Photo 1"   onclick="showIndex(0)"    style="width:80px;" />
+          <img src="../img/quai de seine.jpg"  alt="Photo 2"   onclick="showIndex(1)"    style="width:80px;" />
+          <img src="../img/seine2.jpg"         alt="Photo 3"   onclick="showIndex(2)"    style="width:80px;" />
+          <img src="../img/next.svg"           alt="Suivant"   onclick="nextt()"         style="width:44px;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTÉGER -->
+  <section id="now">
+    <div class="section-inner">
+      <span class="section-label">Héritage</span>
+      <h2>Protégeons cet Héritage</h2>
+      <p>La préservation de la Seine n'est pas seulement une question d'écologie, mais aussi de culture. En protégeant la rivière, nous protégeons une partie importante de notre patrimoine.</p>
+
+      <div class="cards-grid reveal" style="margin-top:2.5rem;">
+        <div class="card">
+          <span class="card-icon">🏞️</span>
+          <h3>Préserver les rives</h3>
+          <p>Limiter les constructions et les pollutions près des rives pour protéger les paysages qui ont inspiré des générations d'artistes.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎭</span>
+          <h3>Soutenir la culture</h3>
+          <p>Encourager les projets artistiques et les événements célébrant la relation unique entre Paris et la Seine.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎓</span>
+          <h3>Éduquer les jeunes</h3>
+          <p>Sensibiliser les jeunes à l'importance historique et culturelle de la Seine à travers des programmes scolaires et des événements publics.</p>
+        </div>
+      </div>
+
+      <div class="cta reveal">
+        <button class="bouton">
+          <a href="../data/d'autre_source.pdf">S'engager pour la Seine</a>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Contactez-nous</h2>
+    <ul>
+      <li>📞 0606060607</li>
+      <li>✉️ problemedelaseine@gmail.com</li>
+      <li>📍 144 boulevard Charles de Gaulle, Paris 75001</li>
+    </ul>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>

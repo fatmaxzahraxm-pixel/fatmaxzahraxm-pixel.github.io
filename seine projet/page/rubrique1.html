@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ce qu'on trouve sous la Seine — Sombre Seine</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../script/22403914.js" defer></script>
+</head>
+<body>
+
+  <header id="entete">
+    <div class="video1">
+      <video autoplay muted loop id="background-video" playsinline>
+        <source src="../img/Video/Drone River Seine, Paris, France, 4k..mov" type="video/mp4">
+      </video>
+    </div>
+    <h1>Sombre <span>Seine</span></h1>
+    <nav>
+      <ul class="nav">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="rubrique1.html" class="active">Problématique</a></li>
+        <li><a href="rubrique2.html">La Seine & Culture</a></li>
+        <li><a href="rubrique3.html">Agissons</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECTION CONTENU -->
+  <section id="content">
+    <div class="section-inner">
+      <span class="section-label">Sous la surface</span>
+      <h2>Ce qu'on trouve sous la Seine</h2>
+      <p>Au fil des siècles, le fleuve a accumulé une mémoire incroyable — objets perdus, traces du passé, vie cachée.</p>
+
+      <div class="cards-grid reveal" style="margin-top:2.5rem;">
+        <div class="card">
+          <span class="card-icon">⚓</span>
+          <h3>Épaves & objets divers</h3>
+          <p>La Seine a accumulé des épaves de bateaux, des voitures accidentées et de nombreux objets jetés dans le fleuve au fil des siècles.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🐟</span>
+          <h3>Faune & flore aquatiques</h3>
+          <p>La rivière abrite des poissons, des plantes subaquatiques et d'autres formes de vie qui peuplent silencieusement ses eaux.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏺</span>
+          <h3>Vestiges historiques</h3>
+          <p>Des artefacts romains, des anciennes embarcations et des objets médiévaux ont été retrouvés lors de fouilles archéologiques.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION DANGERS -->
+  <section id="pollution-dangers">
+    <div class="section-inner">
+      <span class="section-label">Alerte</span>
+      <h2>La Seine : Un Danger Invisible</h2>
+      <p>Sous ses reflets argentés se cachent des menaces chimiques et bactériologiques qui mettent en péril la santé humaine et l'écosystème fluvial.</p>
+
+      <div class="cards-grid reveal" style="margin-top:2.5rem;">
+        <div class="card">
+          <span class="card-icon">☠️</span>
+          <h3>Pollution Chimique</h3>
+          <p>La Seine contient des substances toxiques : métaux lourds, hydrocarbures, résidus chimiques provenant des égouts et des industries.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🦠</span>
+          <h3>Bactéries & Pathogènes</h3>
+          <p>Des analyses révèlent des niveaux dangereux de bactéries coliformes, E.coli et autres agents pathogènes qui rendent l'eau impropre à la baignade.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏥</span>
+          <h3>Impact sur la Santé</h3>
+          <p>L'exposition à ces polluants peut entraîner des infections, des maladies de peau et des troubles gastro-intestinaux, avec des risques à long terme pour la faune aquatique.</p>
+        </div>
+      </div>
+
+      <div class="photo1 reveal">
+        <img src="../img/img22.jpeg" alt="Pollution de la Seine" />
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Contactez-nous</h2>
+    <ul>
+      <li>📞 0606060607</li>
+      <li>✉️ problemedelaseine@gmail.com</li>
+      <li>📍 144 boulevard Charles de Gaulle, Paris 75001</li>
+    </ul>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  </script>
+</body>
+</html>
